@@ -86,14 +86,14 @@ public class SettingPreferenceFragment extends PreferenceFragment {
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
                     cycleTimeListPreference.setValue(newValue.toString());
                     cycleTimeListPreference.setSummary(cycleTimeListPreference.getEntry().toString());
-                    if(cycleTimeListPreference.getValue().equals("10"))
-                        JobSchedulerStart.setTime(10);
-                    if(cycleTimeListPreference.getValue().equals("30"))
-                        JobSchedulerStart.setTime(30);
-                    if(cycleTimeListPreference.getValue().equals("60"))
-                        JobSchedulerStart.setTime(60);
-                    if(cycleTimeListPreference.getValue().equals("180"))
-                        JobSchedulerStart.setTime(180);
+                    if (newValue.equals("10"))
+                        CycleTimer.setPeriod(10);
+                    if (newValue.equals("30"))
+                        CycleTimer.setPeriod(30);
+                    if (newValue.equals("60"))
+                        CycleTimer.setPeriod(60);
+                    if (newValue.equals("180"))
+                        CycleTimer.setPeriod(180);
 
                     return true;
                 }

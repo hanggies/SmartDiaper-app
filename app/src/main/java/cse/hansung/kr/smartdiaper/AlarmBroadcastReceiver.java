@@ -50,7 +50,7 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, context.getString(R.string.notification_channel_id))
                 .setSmallIcon(R.drawable.ic_launcher_background) //알람 아이콘
                 .setContentTitle("SmartDiaper")  //알람 제목
-                .setContentText("기저귀 교체해야하는데.") //알람 내용
+                .setContentText("기저귀 교체해야합니다.") //알람 내용
                 .setAutoCancel(true)
                 .setContentIntent(resultPendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT); //알람 중요도

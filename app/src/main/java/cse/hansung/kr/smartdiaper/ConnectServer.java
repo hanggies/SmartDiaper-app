@@ -9,9 +9,14 @@ import okhttp3.OkHttpClient;
 import okhttp3.*;
 
 public class ConnectServer {
-    private static OkHttpClient client = new OkHttpClient();
+    private OkHttpClient client = new OkHttpClient();
 
-    public static void requestGet(String url, String searchKey){
+    private static ConnectServer instance = new ConnectServer();
+    public static ConnectServer getInstance() {
+        return instance;
+    }
+
+    public void requestGet(String url, String searchKey){
 
         //URL에 포함할 Query문 작성 Name&Value
         HttpUrl.Builder urlBuilder = HttpUrl.parse(url).newBuilder();
