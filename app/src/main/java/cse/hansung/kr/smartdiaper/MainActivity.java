@@ -37,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        JobSchedulerStart.start(this);
+        CycleTimer.init();
+
+        //JobSchedulerStart.start(getApplicationContext());
 
         FirebaseMessaging.getInstance().subscribeToTopic("all");
 
@@ -146,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         CookieController.clearAppCache(this, getFilesDir());
 
         //ipAddress = CycleJsonActivity.getIpAddress();
-        myWebView.loadUrl("http://192.168.0.2:8080/smartDiaper");
+        myWebView.loadUrl("http://192.168.200.113:8080/smartDiaper");
     }
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
